@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/back"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/color1"
+            android:layout_weight="3"/>
+
+        <Button
+            android:id="@+id/again"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="пройти заново"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/color1"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/a_text"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/color2"/>
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv1a"
+        android:layout_marginStart="10dp"/>
+
+</LinearLayout>

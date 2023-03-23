@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Physics</string>
+    <string name="lesson1.1.1"> Примеры механического движения</string>
+    <string name="lesson1.1">  Изменение с течением времени положения тела относительно других тел называется механическим движением.</string>
+    <string name="back">назад</string>
+    <string name="submit">подтвердить</string>
+    <string name="clear_all">очистить всё</string>
+    <string name="next">далее</string>
+    <string name="quest1_1">относительно стола</string>
+    <string name="quest1_2">относительно рельсов</string>
+    <string name="quest1_3">относительно пола вагона</string>
+    <string name="quest1_4">относительно телеграфных столбов</string>
+    <string name="quest2">относительно друг друга самолёты</string>
+    <string name="quest3_1">когда поднимается в лифте не движется относительно</string>
+    <string name="quest3_2">когда стоит на эскалаторе метро, движущемся вверх не движется относительно</string>
+    <string name="quest3_3">когда  едет в автомобиле не движется относительно</string>
+    <string name="quest3_4">когда тренируется на велотренажёре не движется относительно</string>
+    <string name="quest3_5">когда сидит на вращающейся карусели не движется относительно</string>
+    <string name="a_text">Введение</string>
+    <string name="lesson1">Механическое движение: Относительность движения</string>
+    <string name="lesson2">Материальная точка: траектория движения: путь</string>
+    <string name="lesson3">равноускоренное движение: скорость</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
