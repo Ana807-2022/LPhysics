@@ -19,6 +19,7 @@
 
 
             <Button
+                android:layout_marginLeft="8dp"
                 android:id="@+id/back7"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -56,6 +57,7 @@
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/dropdawn_1a2"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
@@ -106,6 +108,7 @@
         android:layout_weight="1">
 
         <Button
+            android:layout_marginStart="4dp"
             android:id="@+id/submit1a2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -122,7 +125,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="6dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="6dp"
             android:text="@string/next"
             android:textSize="10sp"
             android:textStyle="bold"

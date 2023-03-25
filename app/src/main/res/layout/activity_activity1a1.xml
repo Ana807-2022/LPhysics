@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/black"
-    >
+    android:background="@color/black">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,9 +20,10 @@
 
 
     <Button
+        android:layout_marginLeft="8dp"
         android:id="@+id/back6"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/back"
         android:textColor="@color/black"
         android:backgroundTint="@color/color1"/>
@@ -40,34 +41,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/answers_border"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
 
         <TextView
+            android:layout_marginStart="4dp"
             android:id="@+id/quest1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/text_view_border"
+            android:background="@drawable/answers_border"
             android:gravity="center_vertical"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginEnd="4dp"
             android:id="@+id/dropdawn1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
-            android:background="@color/color1">
+            app:boxBackgroundColor="@color/color1"
+            android:background="@drawable/filter_spinner_dropdawn"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            >
 
             <AutoCompleteTextView
                 android:id="@+id/answer1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/black"
+                android:background="@null"
                 android:inputType="none"
                 android:textColor="@color/black"
+                android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
                 tools:ignore="LabelFor,TouchTargetSizeCheck">
 
             </AutoCompleteTextView>
@@ -77,33 +91,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/answers_border">
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_marginStart="4dp"
             android:id="@+id/quest2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/answers_border"
             android:gravity="center_vertical"
             android:textColor="@color/black"
-            android:background="@drawable/text_view_border"/>
+            android:textAlignment="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginEnd="4dp"
             android:id="@+id/dropdawn2"
-            android:background="@color/color1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-
+            app:boxBackgroundColor="@color/color1"
+            android:background="@drawable/filter_spinner_dropdawn"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            >
             <AutoCompleteTextView
                 android:id="@+id/answer2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@null"
                 android:inputType="none"
                 android:textColor="@color/black"
-                tools:ignore="TouchTargetSizeCheck">
+                android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
+                tools:ignore="LabelFor,TouchTargetSizeCheck">
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,32 +140,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/answers_border">
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_marginStart="4dp"
             android:id="@+id/quest3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/answers_border"
             android:gravity="center_vertical"
             android:textColor="@color/black"
-            android:background="@drawable/text_view_border"/>
+            android:textAlignment="center"/>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginEnd="4dp"
             android:id="@+id/dropdawn3"
-            android:background="@color/color1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            app:boxBackgroundColor="@color/color1"
+            android:background="@drawable/filter_spinner_dropdawn"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            >
 
             <AutoCompleteTextView
                 android:id="@+id/answer3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@null"
                 android:inputType="none"
                 android:textColor="@color/black"
-                tools:ignore="TouchTargetSizeCheck">
+                android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
+                tools:ignore="LabelFor,TouchTargetSizeCheck">
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
@@ -146,34 +190,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/answers_border">
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_marginStart="4dp"
             android:id="@+id/quest4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/answers_border"
             android:gravity="center_vertical"
             android:textColor="@color/black"
-            android:background="@drawable/text_view_border"/>
-
+            android:textAlignment="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginEnd="4dp"
             android:id="@+id/dropdawn4"
-            android:background="@color/color1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            app:boxBackgroundColor="@color/color1"
+            android:background="@drawable/filter_spinner_dropdawn"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            >
 
             <AutoCompleteTextView
                 android:id="@+id/answer4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@null"
                 android:inputType="none"
                 android:textColor="@color/black"
-                tools:ignore="TouchTargetSizeCheck">
+                android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
+                tools:ignore="LabelFor,TouchTargetSizeCheck">
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
@@ -182,40 +240,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/answers_border">
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_marginStart="4dp"
             android:id="@+id/quest5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/answers_border"
             android:gravity="center_vertical"
             android:textColor="@color/black"
-            android:background="@drawable/text_view_border"/>
-
+            android:textAlignment="center"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginEnd="4dp"
             android:id="@+id/dropdawn5"
-            android:background="@color/color1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.2"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+            app:boxBackgroundColor="@color/color1"
+            android:background="@drawable/filter_spinner_dropdawn"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            >
 
             <AutoCompleteTextView
                 android:id="@+id/answer5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@null"
                 android:inputType="none"
                 android:textColor="@color/black"
-                tools:ignore="TouchTargetSizeCheck">
+                android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                android:ellipsize="end"
+                android:paddingTop="10dp"
+                tools:ignore="LabelFor,TouchTargetSizeCheck">
 
             </AutoCompleteTextView>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+
+
+
+
 
     <TextView
         android:id="@+id/answer1a1"
@@ -239,6 +315,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_marginStart="2dp"
             android:id="@+id/submit1a1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -252,10 +329,11 @@
 
 
         <Button
+            android:layout_marginEnd="2dp"
             android:id="@+id/next1a1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
             android:backgroundTint="@color/color1"
             android:layout_weight="1"
             android:text="@string/next"

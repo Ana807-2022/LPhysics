@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <Button
+                android:layout_marginLeft="8dp"
                 android:id="@+id/back5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,12 +44,11 @@
                 tools:ignore="UseCompoundDrawables">
 
 
-                <WebView
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="10dp"
-                    android:id="@+id/webView"
-                    tools:ignore="MissingContainers"/>
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_marginLeft="11dp"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/car1a" />
 
 
             <TextView

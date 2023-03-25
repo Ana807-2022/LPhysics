@@ -3,7 +3,6 @@ package com.example.learnphysics;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,8 +18,7 @@ import java.io.InputStream;
 import java.util.Objects;
 
 public class Activity1a1 extends AppCompatActivity {
-    int red;
-    int green;
+
     //image.setImageDrawable(getDrawable(R.d.picture));
     int p = 0;
     int x;
@@ -62,10 +60,6 @@ public class Activity1a1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity1a1);
-
-        red = getColor(R.color.red);
-        green = getColor(R.color.green);
-
 
         p = getIntent().getIntExtra("position",0);
 
@@ -170,6 +164,12 @@ public class Activity1a1 extends AppCompatActivity {
         actv3 = (AutoCompleteTextView) findViewById(R.id.answer3);
         actv4 = (AutoCompleteTextView) findViewById(R.id.answer4);
         actv5 = (AutoCompleteTextView) findViewById(R.id.answer5);
+
+        actv1.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
+        actv2.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
+        actv3.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
+        actv4.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
+        actv5.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
 
         case1 = (TextView) findViewById(R.id.quest1);
         case2 = (TextView) findViewById(R.id.quest2);
@@ -277,41 +277,41 @@ public class Activity1a1 extends AppCompatActivity {
 
            if(p == 0){
                if(answers[0].equals("не движется")){
-                   drop1.setBackgroundColor(green);
+                   drop1.setBackgroundResource(R.drawable.r_answer);
                    actv1.setText("не движется");
                }else{
-                   drop1.setBackgroundColor(red);
+                   drop1.setBackgroundResource(R.drawable.f_answer);
                    actv1.setText("движется");
                }
                if (answers[1].equals("движется")){
-                   drop2.setBackgroundColor(green);
+                   drop2.setBackgroundResource(R.drawable.r_answer);
                    actv2.setText("движется");
                }else{
-                   drop2.setBackgroundColor(red);
+                   drop2.setBackgroundResource(R.drawable.f_answer);
                    actv2.setText("не движется");
                }
                if(answers[2].equals("не движется")){
-                   drop3.setBackgroundColor(green);
+                   drop3.setBackgroundResource(R.drawable.r_answer);
                    actv3.setText("не движется");
                }else{
-                   drop3.setBackgroundColor(red);
+                   drop3.setBackgroundResource(R.drawable.f_answer);
                    actv3.setText("движется");
                }
                if(answers[3].equals("движется")){
-                   drop4.setBackgroundColor(green);
+                   drop4.setBackgroundResource(R.drawable.r_answer);
                    actv4.setText("движется");
                }else{
-                   drop4.setBackgroundColor(red);
+                   drop4.setBackgroundResource(R.drawable.f_answer);
                    actv4.setText("не движется");
                }
                String pt = answers[4];
                answer.append(pt + "/4 баллов.");
            } else if (p == 1) {
                if(answers[0].equals("не движутся")){
-                   drop1.setBackgroundColor(green);
+                   drop1.setBackgroundResource(R.drawable.r_answer);
                    actv1.setText("не движутся");
                }else{
-                   drop1.setBackgroundColor(red);
+                   drop1.setBackgroundResource(R.drawable.f_answer);
                    actv1.setText("движутся");
                }
 
@@ -319,56 +319,56 @@ public class Activity1a1 extends AppCompatActivity {
                answer.append(pt + "/1 баллов.");
            }else{
                if(Objects.equals(answers[0], "пола лифта")){
-                   drop1.setBackgroundColor(green);
+                   drop1.setBackgroundResource(R.drawable.r_answer);
                    actv1.setText("пола лифта");
                }else if(Objects.equals(answers[0], "ступенек")){
-                   drop1.setBackgroundColor(red);
+                   drop1.setBackgroundResource(R.drawable.f_answer);
                    actv1.setText("ступенек");
                }else {
-                   drop1.setBackgroundColor(red);
+                   drop1.setBackgroundResource(R.drawable.f_answer);
                    actv1.setText("балкона в четвёртом этаже");
                }
 
                if(Objects.equals(answers[1], "ступенек")){
-                   drop2.setBackgroundColor(green);
+                   drop2.setBackgroundResource(R.drawable.r_answer);
                    actv2.setText("ступенек");
                }else if(Objects.equals(answers[1], "Земли")){
-                   drop2.setBackgroundColor(red);
+                   drop2.setBackgroundResource(R.drawable.f_answer);
                    actv2.setText("Земли");
                }else {
-                   drop2.setBackgroundColor(red);
+                   drop2.setBackgroundResource(R.drawable.f_answer);
                    actv2.setText("кассы");
                }
 
                if(Objects.equals(answers[2], "сиденья автомобиля")){
-                   drop3.setBackgroundColor(green);
+                   drop3.setBackgroundResource(R.drawable.r_answer);
                    actv3.setText("сиденья автомобиля");
                }else if(Objects.equals(answers[2], "дороги")){
-                   drop3.setBackgroundColor(red);
+                   drop3.setBackgroundResource(R.drawable.f_answer);
                    actv3.setText("дороги");
                }else {
-                   drop3.setBackgroundColor(red);
+                   drop3.setBackgroundResource(R.drawable.f_answer);
                    actv3.setText("колёс автомобиля");
                }
 
                if(Objects.equals(answers[3], "сиденья велосипеда")){
-                   drop4.setBackgroundColor(green);
+                   drop4.setBackgroundResource(R.drawable.r_answer);
                    actv4.setText("сиденья велосипеда");
                }else if(Objects.equals(answers[3], "деревьев")){
-                   drop4.setBackgroundColor(red);
+                   drop4.setBackgroundResource(R.drawable.f_answer);
                    actv4.setText("деревьев");
                }else {
-                   drop4.setBackgroundColor(red);
+                   drop4.setBackgroundResource(R.drawable.f_answer);
                    actv4.setText("домов");
                }
                if(Objects.equals(answers[4], "ремня карусели")){
-                   drop5.setBackgroundColor(green);
+                   drop5.setBackgroundResource(R.drawable.r_answer);
                    actv5.setText("ремня карусели");
                }else if(Objects.equals(answers[4], "скамейки")){
-                   drop5.setBackgroundColor(red);
+                   drop5.setBackgroundResource(R.drawable.f_answer);
                    actv5.setText("скамейки");
                }else {
-                   drop5.setBackgroundColor(red);
+                   drop5.setBackgroundResource(R.drawable.f_answer);
                    actv5.setText("человека на скамейке");
                }
 
@@ -402,28 +402,28 @@ public class Activity1a1 extends AppCompatActivity {
         submit.setVisibility(View.GONE);
         if(p == 0){
             if (actv1.getText().toString().equals("не движется")) {
-                drop1.setBackgroundColor(green);
+                drop1.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop1.setBackgroundColor(red);
+                drop1.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv2.getText().toString().equals("движется")) {
-                drop2.setBackgroundColor(green);
+                drop2.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop2.setBackgroundColor(red);
+                drop2.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv3.getText().toString().equals("не движется")) {
-                drop3.setBackgroundColor(green);
+                drop3.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop3.setBackgroundColor(red);
+                drop3.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv4.getText().toString().equals("движется")) {
-                drop4.setBackgroundColor(green);
+                drop4.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop4.setBackgroundColor(red);
+                drop4.setBackgroundResource(R.drawable.f_answer);
             }
 
             try {
@@ -442,10 +442,10 @@ public class Activity1a1 extends AppCompatActivity {
             answer.append(point + "/4 баллов.");
         }else if (p == 1){
             if (actv1.getText().toString().equals("не движутся")) {
-                drop1.setBackgroundColor(green);
+                drop1.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop1.setBackgroundColor(red);
+                actv1.setDropDownBackgroundResource(R.drawable.f_answer);
             }
 
             try {
@@ -463,34 +463,34 @@ public class Activity1a1 extends AppCompatActivity {
             answer.append(point + "/1 баллов.");
         }else{
             if (actv1.getText().toString().equals("пола лифта")) {
-                drop1.setBackgroundColor(green);
+                drop1.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop1.setBackgroundColor(red);
+                drop1.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv2.getText().toString().equals("ступенек")) {
-                drop2.setBackgroundColor(green);
+                drop2.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop2.setBackgroundColor(red);
+                drop2.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv3.getText().toString().equals("сиденья автомобиля")) {
-                drop3.setBackgroundColor(green);
+                drop3.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop3.setBackgroundColor(red);
+                drop3.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv4.getText().toString().equals("сиденья велосипеда")) {
-                drop4.setBackgroundColor(green);
+                drop4.setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop4.setBackgroundColor(red);
+                drop4.setBackgroundResource(R.drawable.f_answer);
             }
             if (actv5.getText().toString().equals("ремня карусели")) {
-                drop5.setBackgroundColor(green);
+                drop5  .setBackgroundResource(R.drawable.r_answer);
                 point++;
             } else {
-                drop5.setBackgroundColor(red);
+                drop5.setBackgroundResource(R.drawable.f_answer);
             }
 
             try {

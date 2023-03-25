@@ -13,7 +13,6 @@ import android.widget.TextView;
 import java.io.InputStream;
 
 public class Activity1Aa extends AppCompatActivity {
-    WebView webView;
     Button back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +78,6 @@ public class Activity1Aa extends AppCompatActivity {
             text+=e;
         }
         textD.setText(text);
-
-        webView = (WebView) findViewById(R.id.webView);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        String file = "file:android_asset/gif1a.gif";
-        webView.loadUrl(file);
 
 
 
