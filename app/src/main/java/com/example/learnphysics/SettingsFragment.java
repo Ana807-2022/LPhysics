@@ -1,6 +1,5 @@
 package com.example.learnphysics;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,11 +12,11 @@ import android.widget.TextView;
 
 public class SettingsFragment extends Fragment {
     TextView aboutApp;
+    TextView howToUseApp;
 
     public SettingsFragment(){
         // require a empty public constructor
     }
-    TextView account;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,12 +28,19 @@ public class SettingsFragment extends Fragment {
                 openActivity(AboutApp.class);
             }
         });
+
+        howToUseApp = (TextView) view.findViewById(R.id.how_to_use_app);
+        howToUseApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(HowToUseApp.class);
+            }
+        });
         return view;
 
     }
     public void openActivity(Class cl){
-        Intent intent = new Intent(getContext(),cl);
-        startActivity(intent);
+        startActivity(new Intent(getContext(),cl));
     }
 
 }

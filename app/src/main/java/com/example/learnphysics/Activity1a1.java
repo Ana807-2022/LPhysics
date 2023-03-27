@@ -232,7 +232,6 @@ public class Activity1a1 extends AppCompatActivity {
             public void onClick(View v) {
                 if(x == 0){
                     submit();
-                    notClickable();
                 }else{
                     Toast.makeText(getApplicationContext(),"Вы уже прошли это задание",Toast.LENGTH_SHORT).show();
                 }
@@ -399,122 +398,144 @@ public class Activity1a1 extends AppCompatActivity {
     }
 
     public void submit() {
-        submit.setVisibility(View.GONE);
         if(p == 0){
-            if (actv1.getText().toString().equals("не движется")) {
-                drop1.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop1.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv2.getText().toString().equals("движется")) {
-                drop2.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop2.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv3.getText().toString().equals("не движется")) {
-                drop3.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop3.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv4.getText().toString().equals("движется")) {
-                drop4.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop4.setBackgroundResource(R.drawable.f_answer);
+            if(actv1.getText().toString().equals("")||actv2.getText().toString().equals("")||actv3.getText().toString().equals("")||actv4.getText().toString().equals("")){
+                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+            }else{
+                notClickable();
+                submit.setVisibility(View.GONE);
+                if (actv1.getText().toString().equals("не движется")) {
+                    drop1.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop1.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv2.getText().toString().equals("движется")) {
+                    drop2.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop2.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv3.getText().toString().equals("не движется")) {
+                    drop3.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop3.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv4.getText().toString().equals("движется")) {
+                    drop4.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop4.setBackgroundResource(R.drawable.f_answer);
+                }
+
+                try {
+                    File path = getApplicationContext().getFilesDir();
+                    FileOutputStream writer = new FileOutputStream(new File(path, "answer1a1.txt"));
+                    String w = actv1.getText().toString() + "," + actv2.getText().toString() + "," + actv3.getText().toString() + "," + actv4.getText().toString()+","+point;
+                    writer.write(w.getBytes());
+                    writer.close();
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
+                answer.append(point + "/4 баллов.");
+                point = 0;
+                answer.setVisibility(View.VISIBLE);
             }
 
-            try {
-                File path = getApplicationContext().getFilesDir();
-                FileOutputStream writer = new FileOutputStream(new File(path, "answer1a1.txt"));
-                String w = actv1.getText().toString() + "," + actv2.getText().toString() + "," + actv3.getText().toString() + "," + actv4.getText().toString()+","+point;
-                writer.write(w.getBytes());
-                writer.close();
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }
-
-            answer.append(point + "/4 баллов.");
         }else if (p == 1){
-            if (actv1.getText().toString().equals("не движутся")) {
-                drop1.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                actv1.setDropDownBackgroundResource(R.drawable.f_answer);
+            notClickable();
+            submit.setVisibility(View.GONE);
+            if(actv1.getText().toString().equals("")){
+                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+            }else{
+                if (actv1.getText().toString().equals("не движутся")) {
+                    drop1.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    actv1.setDropDownBackgroundResource(R.drawable.f_answer);
+                }
+
+                try {
+                    File path = getApplicationContext().getFilesDir();
+                    FileOutputStream writer = new FileOutputStream(new File(path, "answer1a2.txt"));
+                    String w = actv1.getText().toString() + ","+point;
+                    writer.write(w.getBytes());
+                    writer.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
+                answer.append(point + "/1 баллов.");
+                point = 0;
+                answer.setVisibility(View.VISIBLE);
             }
 
-            try {
-                File path = getApplicationContext().getFilesDir();
-                FileOutputStream writer = new FileOutputStream(new File(path, "answer1a2.txt"));
-                String w = actv1.getText().toString() + ","+point;
-                writer.write(w.getBytes());
-                writer.close();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }
-
-            answer.append(point + "/1 баллов.");
         }else{
-            if (actv1.getText().toString().equals("пола лифта")) {
-                drop1.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop1.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv2.getText().toString().equals("ступенек")) {
-                drop2.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop2.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv3.getText().toString().equals("сиденья автомобиля")) {
-                drop3.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop3.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv4.getText().toString().equals("сиденья велосипеда")) {
-                drop4.setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop4.setBackgroundResource(R.drawable.f_answer);
-            }
-            if (actv5.getText().toString().equals("ремня карусели")) {
-                drop5  .setBackgroundResource(R.drawable.r_answer);
-                point++;
-            } else {
-                drop5.setBackgroundResource(R.drawable.f_answer);
+            notClickable();
+            submit.setVisibility(View.GONE);
+            if(actv1.getText().toString().equals("")||actv2.getText().toString().equals("")||actv3.getText().toString().equals("")||actv4.getText().toString().equals("")||actv5.getText().toString().equals("")){
+                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+            }else{
+                if (actv1.getText().toString().equals("пола лифта")) {
+                    drop1.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop1.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv2.getText().toString().equals("ступенек")) {
+                    drop2.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop2.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv3.getText().toString().equals("сиденья автомобиля")) {
+                    drop3.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop3.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv4.getText().toString().equals("сиденья велосипеда")) {
+                    drop4.setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop4.setBackgroundResource(R.drawable.f_answer);
+                }
+                if (actv5.getText().toString().equals("ремня карусели")) {
+                    drop5  .setBackgroundResource(R.drawable.r_answer);
+                    point++;
+                } else {
+                    drop5.setBackgroundResource(R.drawable.f_answer);
+                }
+
+                try {
+                    File path = getApplicationContext().getFilesDir();
+                    FileOutputStream writer = new FileOutputStream(new File(path, "answer1a3.txt"));
+                    String w = actv1.getText().toString() + ","+
+                            actv2.getText().toString() + ","+
+                            actv3.getText().toString() + ","+
+                            actv4.getText().toString() + ","+
+                            actv5.getText().toString() + ","+point;
+                    writer.write(w.getBytes());
+                    writer.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
+                answer.append(point + "/5 баллов.");
+                point = 0;
+                answer.setVisibility(View.VISIBLE);
             }
 
-            try {
-                File path = getApplicationContext().getFilesDir();
-                FileOutputStream writer = new FileOutputStream(new File(path, "answer1a3.txt"));
-                String w = actv1.getText().toString() + ","+
-                        actv2.getText().toString() + ","+
-                        actv3.getText().toString() + ","+
-                        actv4.getText().toString() + ","+
-                        actv5.getText().toString() + ","+point;
-                writer.write(w.getBytes());
-                writer.close();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            }
-
-            answer.append(point + "/5 баллов.");
         }
-
-        point = 0;
-        answer.setVisibility(View.VISIBLE);
-        submit.setClickable(false);
 
     }
     public void next() {

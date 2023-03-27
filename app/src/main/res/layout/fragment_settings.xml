@@ -50,9 +50,10 @@
         android:src="@drawable/ic_how_to_play_foreground" />
 
     <TextView
+        android:id="@+id/how_to_use_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Как играть"
+        android:text="Как пользоваться приложением"
         android:textColor="@color/color2"
         android:layout_marginLeft="10dp"
         android:textSize="25sp"
