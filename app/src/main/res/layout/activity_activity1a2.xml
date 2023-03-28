@@ -49,7 +49,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="7dp"
                     android:layout_weight="1"
-                    android:hint="enter answer"
+                    android:hint="заполните ответ"
                     android:maxLines="1"
                     android:minHeight="48dp"
                     android:textColor="@color/color2"
