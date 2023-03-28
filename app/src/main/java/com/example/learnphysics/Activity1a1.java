@@ -400,7 +400,7 @@ public class Activity1a1 extends AppCompatActivity {
     public void submit() {
         if(p == 0){
             if(actv1.getText().toString().equals("")||actv2.getText().toString().equals("")||actv3.getText().toString().equals("")||actv4.getText().toString().equals("")){
-                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
             }else{
                 notClickable();
                 submit.setVisibility(View.GONE);
@@ -448,16 +448,16 @@ public class Activity1a1 extends AppCompatActivity {
             }
 
         }else if (p == 1){
-            notClickable();
-            submit.setVisibility(View.GONE);
             if(actv1.getText().toString().equals("")){
-                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
             }else{
+                notClickable();
+                submit.setVisibility(View.GONE);
                 if (actv1.getText().toString().equals("не движутся")) {
                     drop1.setBackgroundResource(R.drawable.r_answer);
                     point++;
                 } else {
-                    actv1.setDropDownBackgroundResource(R.drawable.f_answer);
+                    drop1.setBackgroundResource(R.drawable.f_answer);
                 }
 
                 try {
@@ -478,11 +478,11 @@ public class Activity1a1 extends AppCompatActivity {
             }
 
         }else{
-            notClickable();
-            submit.setVisibility(View.GONE);
             if(actv1.getText().toString().equals("")||actv2.getText().toString().equals("")||actv3.getText().toString().equals("")||actv4.getText().toString().equals("")||actv5.getText().toString().equals("")){
-                Toast.makeText(this, "dbfskjb", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
             }else{
+                notClickable();
+                submit.setVisibility(View.GONE);
                 if (actv1.getText().toString().equals("пола лифта")) {
                     drop1.setBackgroundResource(R.drawable.r_answer);
                     point++;

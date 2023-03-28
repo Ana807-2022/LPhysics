@@ -75,7 +75,7 @@ public class Activity1a2 extends AppCompatActivity {
 
         ///////////////////////////
         text = " ";
-        TextView t = (TextView) findViewById(R.id.question1a2);
+        TextView t = findViewById(R.id.question1a2);
         try {
             InputStream is;
             if(p == 3){
@@ -98,7 +98,7 @@ public class Activity1a2 extends AppCompatActivity {
 
         ////////////////////////
         text2 = " ";
-        answer = (TextView) findViewById(R.id.answer1a2);
+        answer = findViewById(R.id.answer1a2);
         try {
             InputStream is;
             if(p == 3){
@@ -120,11 +120,11 @@ public class Activity1a2 extends AppCompatActivity {
         answer.setVisibility(View.GONE);
 
 
-        editText = (EditText) findViewById(R.id.answerOfquestion);
+        editText = findViewById(R.id.answerOfquestion);
 
         drop = findViewById(R.id.dropdawn_1a2);
 
-        autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.answer_1a2);
+        autoCompleteTextView = findViewById(R.id.answer_1a2);
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.dropdawn_menu,array1);
 
@@ -135,7 +135,7 @@ public class Activity1a2 extends AppCompatActivity {
 
 
         ///////////////////////////
-        back = (Button) findViewById(R.id.back7);
+        back = findViewById(R.id.back7);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,7 +145,7 @@ public class Activity1a2 extends AppCompatActivity {
 
 
         ///////////////////////////
-        submit = (Button) findViewById(R.id.submit1a2);
+        submit = findViewById(R.id.submit1a2);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,7 +163,7 @@ public class Activity1a2 extends AppCompatActivity {
 
 
         ///////////////////////////
-        next = (Button) findViewById(R.id.next1a2);
+        next = findViewById(R.id.next1a2);
         if(p == 4){
             next.setVisibility(View.GONE);
         }
@@ -222,41 +222,49 @@ public class Activity1a2 extends AppCompatActivity {
     }
 
     public void submit1a2() {
+        if (editText.getText().toString().equals("") && autoCompleteTextView.getText().toString().equals("") ) {
+            Toast.makeText(getApplicationContext(), "Заполните поля", Toast.LENGTH_SHORT).show();
+        } else if (editText.getText().toString().equals("")) {
+                Toast.makeText(getApplicationContext(), "Заполните первое поле", Toast.LENGTH_SHORT).show();
+            } else if(autoCompleteTextView.getText().toString().equals("")){
+            Toast.makeText(getApplicationContext(), "Заполните второе поле", Toast.LENGTH_SHORT).show();
+        } else{
+                if(check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 2){
+                }else {
+                    try {
+                        File path = getApplicationContext().getFilesDir();
+                        FileOutputStream writer;
+                        if(p == 3){
+                            writer = new FileOutputStream(new File(path, "answer1a4.txt"));
+                        }else {
+                            writer = new FileOutputStream(new File(path, "answer1a5.txt"));
+                        }
+                        String w = editText.getText().toString() + ","+autoCompleteTextView.getText().toString() + ","+point;
+                        writer.write(w.getBytes());
+                        writer.close();
 
-            if(check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 2){
-            }else {
-                try {
-                    File path = getApplicationContext().getFilesDir();
-                    FileOutputStream writer;
-                    if(p == 3){
-                        writer = new FileOutputStream(new File(path, "answer1a4.txt"));
-                    }else {
-                        writer = new FileOutputStream(new File(path, "answer1a5.txt"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
                     }
-                    String w = editText.getText().toString() + ","+autoCompleteTextView.getText().toString() + ","+point;
-                    writer.write(w.getBytes());
-                    writer.close();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-
+                    submit.setVisibility(View.GONE);
+                    if(check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 0){
+                        point++;
+                        editText.setBackgroundTintList(ColorStateList.valueOf(green));
+                        editText.setTextColor(green);
+                        drop.setBackgroundColor(green);
+                    } else if (check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 1) {
+                        editText.setBackgroundTintList(ColorStateList.valueOf(red));
+                        editText.setTextColor(red);
+                        drop.setBackgroundColor(red);
+                    }
+                    answer.append(point + "/1 баллов.");
+                    point = 0;
+                    answer.setVisibility(View.VISIBLE);
+                    notClickable();
                 }
-                submit.setVisibility(View.GONE);
-                if(check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 0){
-                    point++;
-                    editText.setBackgroundTintList(ColorStateList.valueOf(green));
-                    editText.setTextColor(green);
-                    drop.setBackgroundColor(green);
-                } else if (check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 1) {
-                    editText.setBackgroundTintList(ColorStateList.valueOf(red));
-                    editText.setTextColor(red);
-                    drop.setBackgroundColor(red);
-                }
-                answer.append(point + "/1 баллов.");
-                point = 0;
-                answer.setVisibility(View.VISIBLE);
-                notClickable();
             }
+
 
     }
     public void next1a2() {
@@ -283,7 +291,7 @@ public class Activity1a2 extends AppCompatActivity {
             }
 
         }catch (Exception e){
-            Toast.makeText(getApplicationContext(), "enter only number in first state", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "на первом поле напишите только цифру", Toast.LENGTH_SHORT).show();
             return 2;
         }
 

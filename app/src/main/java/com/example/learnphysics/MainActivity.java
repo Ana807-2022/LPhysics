@@ -2,42 +2,56 @@ package com.example.learnphysics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
-    BottomNavigationView bottomNavigationView;
+public class MainActivity extends AppCompatActivity {
+    private ImageView howToUseApp;
+    private ImageView aboutApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
-
-
+        Button start = (Button) findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(MainActivity2.class);
+            }
+        });
+        howToUseApp = (ImageView) findViewById(R.id.imageView_HowToUseApp);
+        howToUseApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(HowToUseApp.class);
+            }
+        });
+        aboutApp = (ImageView) findViewById(R.id.imageView_aboutApp);
+        aboutApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(AboutApp.class);
+            }
+        });
     }
-    HomeFragment homeFragment = new HomeFragment();
-    SettingsFragment settingsFragment = new SettingsFragment();
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
-            case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, homeFragment).commit();
-                return true;
-            case R.id.settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment,settingsFragment).commit();
-                return true;
-        }
-        return false;
+    public void openActivity(Class cl){
+        Intent intent = new Intent(getApplicationContext(),cl);
+        startActivity(intent);
     }
 }
