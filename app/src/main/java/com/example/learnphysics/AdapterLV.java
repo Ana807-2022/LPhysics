@@ -16,10 +16,12 @@ import androidx.annotation.Nullable;
 public class AdapterLV extends ArrayAdapter<Row> {
     Context context;
     Row[] item;
-    public AdapterLV (Context context, Row[] item){
+    int page;
+    public AdapterLV (Context context, Row[] item, int page){
         super(context,R.layout.item,item);
           this.context = context;
           this.item = item;
+          this.page = page;
     }
 
     @NonNull
@@ -40,13 +42,25 @@ public class AdapterLV extends ArrayAdapter<Row> {
             @Override
             public void onClick(View v) {
                 Intent i;
-                if ( item[position].getNum() == 0 || item[position].getNum() == 1 || item[position].getNum() == 2 ){
-                    i = new Intent(context.getApplicationContext(),Activity1a1.class);
+                if(page == 1){
+                    if ( item[position].getNum() == 0 || item[position].getNum() == 1 || item[position].getNum() == 2 ){
+                        i = new Intent(context.getApplicationContext(),Activity1a1.class);
+                    }else{
+                        i = new Intent(context.getApplicationContext(),Activity1a2.class);
+                    }
+                    i.putExtra("position",item[position].getNum());
+                    context.startActivity(i);
+                }else if(page == 2){
+                    if ( item[position].getNum() == 0 || item[position].getNum() == 1 ){
+                        i = new Intent(context.getApplicationContext(),Activity1b1.class);
+                    }else{
+                        i = new Intent(context.getApplicationContext(),Activity1b2.class);
+                    }
+                    i.putExtra("position",item[position].getNum());
+                    context.startActivity(i);
                 }else{
-                    i = new Intent(context.getApplicationContext(),Activity1a2.class);
+
                 }
-                i.putExtra("position",item[position].getNum());
-                context.startActivity(i);
             }
         });
 

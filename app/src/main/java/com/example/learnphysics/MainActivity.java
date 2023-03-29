@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity(MainActivity2.class);
+                openActivity(Activity1.class);
             }
         });
         howToUseApp = (ImageView) findViewById(R.id.imageView_HowToUseApp);

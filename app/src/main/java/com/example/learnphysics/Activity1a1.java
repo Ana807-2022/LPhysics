@@ -18,8 +18,6 @@ import java.io.InputStream;
 import java.util.Objects;
 
 public class Activity1a1 extends AppCompatActivity {
-
-    //image.setImageDrawable(getDrawable(R.d.picture));
     int p = 0;
     int x;
     String text;
@@ -33,11 +31,11 @@ public class Activity1a1 extends AppCompatActivity {
     String[] exeption = {"resource not found :)"};
     String[] items1 = {"движется", "не движется"};
     String[] items2 = {"движутся", "не движутся"};
-    String[] items3var1 = {"балкона в четвёртом этаже", "пола лифта" , "ступенек"};
+    String[] items3var1 = {"двери подъезда", "пола лифта" , "ступенек"};
     String[] items3var2 = {"кассы", "Земли" , "ступенек"};
     String[] items3var3 = {"колёс автомобиля", "сиденья автомобиля" , "дороги"};
     String[] items3var4 = {"сиденья велосипеда" , "деревьев", "домов"};
-    String[] items3var5 = {"скамейки" , "человека на скамейке" , "ремня карусели"};
+    String[] items3var5 = {"скамейки" , "зданий" , "ремня карусели"};
     AutoCompleteTextView actv1;
     AutoCompleteTextView actv2;
     AutoCompleteTextView actv3;
@@ -230,13 +228,7 @@ public class Activity1a1 extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(x == 0){
-                    submit();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Вы уже прошли это задание",Toast.LENGTH_SHORT).show();
-                }
-
-
+                submit();
             }
         });
 
@@ -325,7 +317,7 @@ public class Activity1a1 extends AppCompatActivity {
                    actv1.setText("ступенек");
                }else {
                    drop1.setBackgroundResource(R.drawable.f_answer);
-                   actv1.setText("балкона в четвёртом этаже");
+                   actv1.setText("двери подъезда");
                }
 
                if(Objects.equals(answers[1], "ступенек")){
@@ -368,7 +360,7 @@ public class Activity1a1 extends AppCompatActivity {
                    actv5.setText("скамейки");
                }else {
                    drop5.setBackgroundResource(R.drawable.f_answer);
-                   actv5.setText("человека на скамейке");
+                   actv5.setText("зданий");
                }
 
                String pt = answers[5];

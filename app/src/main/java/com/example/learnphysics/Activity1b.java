@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class Activity1a extends AppCompatActivity {
+public class Activity1b extends AppCompatActivity {
     Button again_pass_tests;
     Button back;
     Button v;
@@ -22,18 +22,19 @@ public class Activity1a extends AppCompatActivity {
 
     int count = 0;
     int falseCount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity1a);
+        setContentView(R.layout.activity_activity1b);
 
-        file(0,"answer1a1.txt");
-        file(1,"answer1a2.txt");
-        file(2,"answer1a3.txt");
-        file(3,"answer1a4.txt");
-        file(4,"answer1a5.txt");
+        file(0,"answer1b1.txt");
+        file(1,"answer1b2.txt");
+        file(2,"answer1b3.txt");
+        file(3,"answer1b4.txt");
+        file(4,"answer1b5.txt");
 
-        back = (Button) findViewById(R.id.back1a);
+        back = (Button) findViewById(R.id.back1b);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,12 +43,9 @@ public class Activity1a extends AppCompatActivity {
         });
         Row[] item = {
                 new Row(false,"упражнение номер 1",0),
-                new Row(false,"упражнение номер 2",1),
-                new Row(false,"упражнение номер 3",2),
-                new Row(false,"упражнение номер 4",3),
-                new Row(false,"упражнение номер 5",4)
+                new Row(false,"упражнение номер 2",1)
         };
-        for(int i = 0;i < 5; i++){
+        for(int i = 0;i < item.length; i++){
             if(x[i]==0){
                 item[i].setPassed(false);
                 falseCount++;
@@ -57,7 +55,7 @@ public class Activity1a extends AppCompatActivity {
             }
         }
 
-        for(int i = 0;i < 5; i++){
+        for(int i = 0;i < item.length; i++){
             if(item[i].getPassed()==true){
                 count++;
             }
@@ -65,11 +63,8 @@ public class Activity1a extends AppCompatActivity {
         Row[] tasks = {
                 new Row(false,"0",-1),
                 new Row(false,"0",-1),
-                new Row(false,"0",-1),
-                new Row(false,"0",-1),
-                new Row(false,"0",-1)
         };
-        for(int i = 0;i < 5;i++){
+        for(int i = 0;i < tasks.length;i++){
             if(item[i].getPassed() == false){
                 for(int j = 0 ; j < falseCount ; j++){
                     if(tasks[j].getNum() == -1){
@@ -87,12 +82,12 @@ public class Activity1a extends AppCompatActivity {
             }
         }
 
-        ListView lv = findViewById(R.id.lv1a);
-        AdapterLV ad = new AdapterLV(this,tasks,1);
+        ListView lv = findViewById(R.id.lv1b);
+        AdapterLV ad = new AdapterLV(this,tasks,2);
         lv.setAdapter(ad);
 
 
-        v = (Button) findViewById(R.id.theme1a);
+        v = (Button) findViewById(R.id.theme1b);
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,8 +96,8 @@ public class Activity1a extends AppCompatActivity {
         });
 
 
-        again_pass_tests = (Button) findViewById(R.id.again1a);
-        if(count == 5){
+        again_pass_tests = (Button) findViewById(R.id.again1b);
+        if(count == 2){
             again_pass_tests.setVisibility(View.VISIBLE);
         }else{
             again_pass_tests.setVisibility(View.INVISIBLE);
@@ -151,14 +146,13 @@ public class Activity1a extends AppCompatActivity {
         }
     }
     public void againPassTests(){
-        writeInFile("answer1a1.txt",null);
-        writeInFile("answer1a2.txt",null);
-        writeInFile("answer1a3.txt",null);
-        writeInFile("answer1a4.txt",null);
-        writeInFile("answer1a5.txt",null);
-        Intent intent = new Intent(getApplicationContext(),Activity1a.class);
+        writeInFile("answer1b1.txt",null);
+        writeInFile("answer1b2.txt",null);
+        writeInFile("answer1b3.txt",null);
+        writeInFile("answer1b4.txt",null);
+        writeInFile("answer1b5.txt",null);
+        Intent intent = new Intent(getApplicationContext(),Activity1b.class);
         startActivity(intent);
 
     }
-
 }

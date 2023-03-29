@@ -38,7 +38,7 @@ public class Activity1a2 extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     com.google.android.material.textfield.TextInputLayout drop;
 
-    String[] array1 = {"m","km","sm","kg"};
+    String[] array1 = {"м","км","см","кг"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,21 +182,21 @@ public class Activity1a2 extends AppCompatActivity {
             if(answers[0].equals("10") && answers[1].equals("m")|| answers[0].equals("0.01")  && answers[1].equals("km")||answers[0].equals("1000")  && answers[1].equals("sm")){
                 editText.setBackgroundTintList(ColorStateList.valueOf(green));
                 editText.setTextColor(green);
-                drop.setBackgroundColor(green);
+                drop.setBackgroundResource(R.drawable.r_answer);
             }else{
                 editText.setBackgroundTintList(ColorStateList.valueOf(red));
                 editText.setTextColor(red);
-                drop.setBackgroundColor(red);
+                drop.setBackgroundResource(R.drawable.f_answer);
             }
         }else{
             if(answers[0].equals("9") && answers[1].equals("m")|| answers[0].equals("0.009")  && answers[1].equals("km")||answers[0].equals("900")  && answers[1].equals("sm")){
                 editText.setBackgroundTintList(ColorStateList.valueOf(green));
                 editText.setTextColor(green);
-                drop.setBackgroundColor(green);
+                drop.setBackgroundResource(R.drawable.r_answer);
             }else{
                 editText.setBackgroundTintList(ColorStateList.valueOf(red));
                 editText.setTextColor(red);
-                drop.setBackgroundColor(red);
+                drop.setBackgroundResource(R.drawable.f_answer);
             }
         }
 
@@ -252,11 +252,11 @@ public class Activity1a2 extends AppCompatActivity {
                         point++;
                         editText.setBackgroundTintList(ColorStateList.valueOf(green));
                         editText.setTextColor(green);
-                        drop.setBackgroundColor(green);
+                        drop.setBackgroundResource(R.drawable.r_answer);
                     } else if (check(editText.getText().toString(), autoCompleteTextView.getText().toString()) == 1) {
                         editText.setBackgroundTintList(ColorStateList.valueOf(red));
                         editText.setTextColor(red);
-                        drop.setBackgroundColor(red);
+                        drop.setBackgroundResource(R.drawable.f_answer);
                     }
                     answer.append(point + "/1 баллов.");
                     point = 0;
@@ -294,9 +294,5 @@ public class Activity1a2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "на первом поле напишите только цифру", Toast.LENGTH_SHORT).show();
             return 2;
         }
-
-
-
-
     }
 }

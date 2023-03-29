@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1000">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_marginLeft="8dp"
+                android:id="@+id/back1b1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/color1"/>
+
+
+            <TextView
+                android:id="@+id/question1b1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/quest1b1_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/answers_border"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/dropdawn1b1_1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    app:boxBackgroundColor="@color/color1"
+                    android:background="@drawable/filter_spinner_dropdawn"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/answer1b1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                        android:ellipsize="end"
+                        android:paddingTop="10dp"
+                        tools:ignore="LabelFor,TouchTargetSizeCheck">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/quest1b1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/answers_border"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/dropdawn1b1_2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    app:boxBackgroundColor="@color/color1"
+                    android:background="@drawable/filter_spinner_dropdawn"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    >
+                    <AutoCompleteTextView
+                        android:id="@+id/answer1b1_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                        android:ellipsize="end"
+                        android:paddingTop="10dp"
+                        tools:ignore="LabelFor,TouchTargetSizeCheck">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/quest1b1_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/answers_border"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/dropdawn1b1_3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    app:boxBackgroundColor="@color/color1"
+                    android:background="@drawable/filter_spinner_dropdawn"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/answer1b1_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                        android:ellipsize="end"
+                        android:paddingTop="10dp"
+                        tools:ignore="LabelFor,TouchTargetSizeCheck">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/quest1b1_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/answers_border"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginEnd="4dp"
+                    android:id="@+id/dropdawn1b1_4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    app:boxBackgroundColor="@color/color1"
+                    android:background="@drawable/filter_spinner_dropdawn"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/answer1b1_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:dropDownSelector="@drawable/filter_spinner_dropdawn"
+                        android:ellipsize="end"
+                        android:paddingTop="10dp"
+                        tools:ignore="LabelFor,TouchTargetSizeCheck">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/answer1b1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_marginStart="2dp"
+            android:id="@+id/submit1b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color1"
+            android:text="@string/submit"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:layout_marginEnd="2dp"
+            android:id="@+id/next1b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:backgroundTint="@color/color1"
+            android:layout_weight="1"
+            android:text="@string/next"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

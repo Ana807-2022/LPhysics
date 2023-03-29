@@ -14,7 +14,7 @@
 
         <Button
             android:layout_marginLeft="8dp"
-            android:id="@+id/back1a"
+            android:id="@+id/back1b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/back"
@@ -23,7 +23,7 @@
             android:layout_weight="2"/>
 
         <Button
-            android:id="@+id/again1a"
+            android:id="@+id/again1b"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="8dp"
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
 
 
     <Button
-        android:id="@+id/theme1a"
+        android:id="@+id/theme1b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/a_text"
@@ -50,7 +50,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv1a"
+        android:id="@+id/lv1b"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"/>
 
