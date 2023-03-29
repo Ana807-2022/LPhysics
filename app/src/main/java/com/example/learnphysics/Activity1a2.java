@@ -130,6 +130,8 @@ public class Activity1a2 extends AppCompatActivity {
 
         autoCompleteTextView.setAdapter(arrayAdapter);
 
+        autoCompleteTextView.setDropDownBackgroundResource(R.drawable.filter_spinner_dropdawn);
+
 
 
 
@@ -179,7 +181,7 @@ public class Activity1a2 extends AppCompatActivity {
 
         String[] answers = read.split(",");
         if(p == 3){
-            if(answers[0].equals("10") && answers[1].equals("m")|| answers[0].equals("0.01")  && answers[1].equals("km")||answers[0].equals("1000")  && answers[1].equals("sm")){
+            if(answers[0].equals("10") && answers[1].equals("м")|| answers[0].equals("0.01")  && answers[1].equals("км")||answers[0].equals("1000")  && answers[1].equals("см")){
                 editText.setBackgroundTintList(ColorStateList.valueOf(green));
                 editText.setTextColor(green);
                 drop.setBackgroundResource(R.drawable.r_answer);
@@ -189,7 +191,7 @@ public class Activity1a2 extends AppCompatActivity {
                 drop.setBackgroundResource(R.drawable.f_answer);
             }
         }else{
-            if(answers[0].equals("9") && answers[1].equals("m")|| answers[0].equals("0.009")  && answers[1].equals("km")||answers[0].equals("900")  && answers[1].equals("sm")){
+            if(answers[0].equals("9") && answers[1].equals("м")|| answers[0].equals("0.009")  && answers[1].equals("км")||answers[0].equals("900")  && answers[1].equals("см")){
                 editText.setBackgroundTintList(ColorStateList.valueOf(green));
                 editText.setTextColor(green);
                 drop.setBackgroundResource(R.drawable.r_answer);
@@ -277,13 +279,13 @@ public class Activity1a2 extends AppCompatActivity {
         try{
             Float.parseFloat(value);
             if (p == 3) {
-                if (unit.equals("km") && value.equals("0.01") || unit.equals("m") && value.equals("10") || unit.equals("sm") && value.equals("1000")) {
+                if (unit.equals("км") && value.equals("0.01") || unit.equals("м") && value.equals("10") || unit.equals("см") && value.equals("1000")) {
                     return 0;
                 } else {
                     return 1;
                 }
             } else {
-                if (unit.equals("km") && value.equals("0.009") || unit.equals("m") && value.equals("9") || unit.equals("sm") && value.equals("900")) {
+                if (unit.equals("км") && value.equals("0.009") || unit.equals("м") && value.equals("9") || unit.equals("см") && value.equals("900")) {
                     return 0;
                 } else {
                     return 1;

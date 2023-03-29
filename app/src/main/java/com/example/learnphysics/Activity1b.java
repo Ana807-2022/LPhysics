@@ -43,7 +43,10 @@ public class Activity1b extends AppCompatActivity {
         });
         Row[] item = {
                 new Row(false,"упражнение номер 1",0),
-                new Row(false,"упражнение номер 2",1)
+                new Row(false,"упражнение номер 2",1),
+                new Row(false,"упражнение номер 3",2),
+                new Row(false,"упражнение номер 4",3),
+                new Row(false,"упражнение номер 5",4)
         };
         for(int i = 0;i < item.length; i++){
             if(x[i]==0){
@@ -63,6 +66,9 @@ public class Activity1b extends AppCompatActivity {
         Row[] tasks = {
                 new Row(false,"0",-1),
                 new Row(false,"0",-1),
+                new Row(false,"0",-1),
+                new Row(false,"0",-1),
+                new Row(false,"0",-1)
         };
         for(int i = 0;i < tasks.length;i++){
             if(item[i].getPassed() == false){
@@ -97,7 +103,7 @@ public class Activity1b extends AppCompatActivity {
 
 
         again_pass_tests = (Button) findViewById(R.id.again1b);
-        if(count == 2){
+        if(count == 5){
             again_pass_tests.setVisibility(View.VISIBLE);
         }else{
             again_pass_tests.setVisibility(View.INVISIBLE);
