@@ -91,7 +91,7 @@ public class Activity1b extends AppCompatActivity {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                act1a();
+                act1b();
             }
         });
 
@@ -114,8 +114,8 @@ public class Activity1b extends AppCompatActivity {
         Intent i = new Intent(this,Activity1.class);
         startActivity(i);
     }
-    public void act1a(){
-        Intent i = new Intent(this,Activity1Aa.class);
+    public void act1b(){
+        Intent i = new Intent(this,Activity1bB.class);
         startActivity(i);
     }
     public void writeInFile(String fileName,String text){
